@@ -1,4 +1,4 @@
-\* {
+* {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
@@ -82,6 +82,7 @@ body {
 .form-group input[type="text"],
 .callback-form input {
     width: 100%;
+    min-width: 0;
     padding: 12px 14px;
     font-size: 15px;
     color: #ffffff;
@@ -105,17 +106,20 @@ input::placeholder {
 
 button[type="submit"],
 .btn-primary {
-    display: inline-block;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
     text-align: center;
     text-decoration: none;
-    padding: 14px 24px;
-    font-size: 16px;
+    padding: 13px 22px;
+    font-size: 15px;
     font-weight: 600;
     color: #ffffff;
     background: linear-gradient(135deg, #f97316, #ea580c);
     border: none;
     border-radius: 10px;
     cursor: pointer;
+    white-space: nowrap;
     transition: transform 0.15s, box-shadow 0.2s, background 0.2s;
 }
 
@@ -173,6 +177,7 @@ button[type="submit"]:active,
     border-radius: 8px;
     font-size: 14px;
     font-weight: 600;
+    white-space: nowrap;
     transition: background 0.2s;
 }
 
@@ -219,15 +224,18 @@ button[type="submit"]:active,
 }
 
 .btn-secondary {
-    display: inline-block;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
     text-decoration: none;
-    padding: 14px 24px;
-    font-size: 16px;
+    padding: 13px 22px;
+    font-size: 15px;
     font-weight: 600;
     color: #f1f5f9;
     background: #1e232b;
     border: 1px solid #333c4a;
     border-radius: 10px;
+    white-space: nowrap;
     transition: border-color 0.2s, background 0.2s;
 }
 
@@ -280,9 +288,31 @@ button[type="submit"]:active,
     padding: 36px 28px;
 }
 
+.request-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    flex-wrap: wrap;
+    margin-bottom: 8px;
+}
+
 .request-box h2 {
     font-size: 24px;
-    margin-bottom: 8px;
+    margin: 0;
+}
+
+.schedule-tag {
+    display: inline-flex;
+    align-items: center;
+    padding: 5px 12px;
+    border-radius: 999px;
+    font-size: 13px;
+    font-weight: 600;
+    color: #4ade80;
+    background: rgba(34, 197, 94, 0.14);
+    border: 1px solid rgba(74, 222, 128, 0.35);
+    white-space: nowrap;
 }
 
 .request-box p {
@@ -292,8 +322,14 @@ button[type="submit"]:active,
 
 .callback-form {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    grid-template-columns: repeat(3, minmax(0, 1fr)) auto;
     gap: 14px;
+    align-items: stretch;
+}
+
+.callback-form input,
+.callback-form button[type="submit"] {
+    height: 48px;
 }
 
 .call-summary {
@@ -323,12 +359,30 @@ button[type="submit"]:active,
     color: #64748b;
 }
 
+@media (max-width: 900px) {
+    .callback-form {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .callback-form button[type="submit"] {
+        grid-column: 1 / -1;
+    }
+}
+
 @media (max-width: 600px) {
     .hero h1 {
         font-size: 28px;
     }
 
     .user-location {
-        display: none
+        display: none;
+    }
+
+    .request-box {
+        padding: 24px 18px;
+    }
+
+    .callback-form {
+        grid-template-columns: 1fr;
     }
 }
