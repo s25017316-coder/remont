@@ -1,6 +1,7 @@
 const MASTER_PHONE = '77715442786';
 const MASTER_PHONE_DISPLAY = '+7 771 544 27 86';
 const API_URL = 'https://boiler-bot.onrender.com/api/lead';
+const STORAGE_KEY = 'boiler_site_state_v1';
 
 const citySelect = document.getElementById('citySelect');
 const customDistrictGroup = document.getElementById('customDistrictGroup');
@@ -14,8 +15,69 @@ const callbackForm = document.getElementById('callbackForm');
 const callSummary = document.getElementById('callSummary');
 const whatsappBtn = document.getElementById('whatsappBtn');
 
-let selectedLocation = 'Алматы и Алатау';
-let selectedSource = 'Не указан';
+const clientNameInput = document.getElementById('clientName');
+const clientPhoneInput = document.getElementById('clientPhone');
+const boilerModelInput = document.getElementById('boilerModel');
+
+const defaultState = {
+    entered: false,
+    location: 'Алматы и Алатау',
+    source: 'Не указан',
+    name: '',
+    phone: '',
+    model: ''
+};
+
+function loadState() {
+    try {
+        const raw = localStorage.getItem(STORAGE_KEY);
+        if (!raw) return { ...defaultState };
+        return { ...defaultState, ...JSON.parse(raw) };
+    } catch (_) {
+        return { ...defaultState };
+    }
+}
+
+function saveState(patch) {
+    state = { ...state, ...patch };
+    try {
+        localStorage.setItem(STORAGE_KEY, JSON.stringify(state));
+    } catch (_) {}
+}
+
+let state = loadState();
+let selectedLocation = state.location;
+let selectedSource = state.source;
+
+function updateWhatsappLink() {
+    if (!whatsappBtn) return;
+    const welcomeText = encodeURIComponent(
+        `Здравствуйте! Нужен ремонт газового котла (24/7). Локация: ${selectedLocation}. Источник: ${selectedSource}.`
+    );
+    whatsappBtn.href = `https://wa.me/${MASTER_PHONE}?text=${welcomeText}`;
+}
+
+function applyStateToUI() {
+    if (displayLocation) {
+        displayLocation.textContent = 'Локация: ' + selectedLocation + ' • 24/7';
+    }
+    if (clientNameInput && state.name) clientNameInput.value = state.name;
+    if (clientPhoneInput && state.phone) clientPhoneInput.value = state.phone;
+    if (boilerModelInput && state.model) boilerModelInput.value = state.model;
+
+    if (sourceSelect && state.source && state.source !== 'Не указан') {
+        sourceSelect.value = state.source;
+    }
+
+    updateWhatsappLink();
+
+    if (state.entered) {
+        if (welcomeModal) welcomeModal.style.display = 'none';
+        if (siteWrapper) siteWrapper.style.display = 'block';
+    }
+}
+
+applyStateToUI();
 
 citySelect.addEventListener('change', function () {
     if (this.value === 'other_district') {
@@ -37,26 +99,39 @@ entryForm.addEventListener('submit', function (e) {
 
     selectedSource = sourceSelect.value || 'Не указан';
 
-    displayLocation.textContent = 'Локация: ' + selectedLocation;
+    saveState({
+        entered: true,
+        location: selectedLocation,
+        source: selectedSource
+    });
 
-    const welcomeText = encodeURIComponent(
-        `Здравствуйте! Нужен ремонт газового котла. Локация: ${selectedLocation}. Источник: ${selectedSource}.`
-    );
-    whatsappBtn.href = `https://wa.me/${MASTER_PHONE}?text=${welcomeText}`;
+    displayLocation.textContent = 'Локация: ' + selectedLocation + ' • 24/7';
+    updateWhatsappLink();
 
     welcomeModal.style.display = 'none';
     siteWrapper.style.display = 'block';
 });
 
+[clientNameInput, clientPhoneInput, boilerModelInput].forEach(function (input) {
+    if (!input) return;
+    input.addEventListener('input', function () {
+        saveState({
+            name: clientNameInput.value,
+            phone: clientPhoneInput.value,
+            model: boilerModelInput.value
+        });
+    });
+});
+
 callbackForm.addEventListener('submit', function (e) {
     e.preventDefault();
 
-    const name = document.getElementById('clientName').value.trim();
-    const phone = document.getElementById('clientPhone').value.trim();
-    const model = document.getElementById('boilerModel').value.trim() || 'не указана';
+    const name = clientNameInput.value.trim();
+    const phone = clientPhoneInput.value.trim();
+    const model = boilerModelInput.value.trim() || 'не указана';
 
     const message =
-        `Новый вызов на ${MASTER_PHONE_DISPLAY}:\n` +
+        `Новый вызов (24/7) на ${MASTER_PHONE_DISPLAY}:\n` +
         `Клиент: ${name}\n` +
         `Телефон: ${phone}\n` +
         `Локация: ${selectedLocation}\n` +
@@ -74,6 +149,7 @@ callbackForm.addEventListener('submit', function (e) {
             model: model,
             location: selectedLocation,
             source: selectedSource,
+            schedule: '24/7',
             masterPhone: MASTER_PHONE_DISPLAY
         })
     })
@@ -84,9 +160,12 @@ callbackForm.addEventListener('submit', function (e) {
         return res.json();
     })
     .then(function () {
+        saveState({ name: '', phone: '', model: '' });
+        callbackForm.reset();
+
         callSummary.style.display = 'block';
         callSummary.innerHTML =
-            `<p style="color: #22c55e;"><strong>Заявка отправлена!</strong></p>` +
+            `<p style="color: #22c55e;"><strong>Заявка отправлена! Работаем 24/7.</strong></p>` +
             `<p>Ожидайте звонка мастера на номер ${phone}.</p>` +
             `<div class="summary-actions">` +
             `<a href="tel:+${MASTER_PHONE}" class="btn-primary">Позвонить сразу</a>` +
@@ -96,12 +175,10 @@ callbackForm.addEventListener('submit', function (e) {
     .catch(function () {
         callSummary.style.display = 'block';
         callSummary.innerHTML =
-            `<p style="color: #ef4444;">Сервер не ответил. Можно сразу отправить заявку в WhatsApp:</p>` +
+            `<p style="color: #ef4444;">Сервер не ответил. Можно сразу отправить заявку в WhatsApp (24/7):</p>` +
             `<div class="summary-actions">` +
             `<a href="${waUrl}" target="_blank" rel="noopener noreferrer" class="btn-primary">Открыть WhatsApp</a>` +
             `<a href="tel:+${MASTER_PHONE}" class="btn-secondary">Позвонить</a>` +
             `</div>`;
     });
-
-    callbackForm.reset();
 });
