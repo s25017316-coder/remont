@@ -24,6 +24,7 @@
                 <div class="user-location" id="displayLocation">
                     📍 Алматы и Алатау • 24/7
                 </div>
+                <a href="#request" class="btn-primary">Оформить вызов</a>
                 <a href="tel:+77715442786" class="nav-call-btn">+7 771 544 27 86</a>
             </div>
         </header>
@@ -35,7 +36,8 @@
                     <h1>Срочный ремонт и сервис газовых котлов в Алматы и Алатау</h1>
                     <p>Оперативная диагностика, химическая промывка теплообменников, ремонт электронных плат, замена насосов и трёхходовых клапанов на дому. Обслуживаем <strong>Hubert, Teploros, Daewoo, Rinnai, Buran, Navien, Kiturami, Baxi, Bosch, Ariston</strong> и другие марки с гарантией до 12 месяцев.</p>
                     <div class="hero-actions">
-                        <a href="tel:+77715442786" class="btn-primary" id="directCallBtn">Позвонить: +7 771 544 27 86</a>
+                        <a href="#request" class="btn-primary" id="topOrderBtn">Оформить вызов</a>
+                        <a href="tel:+77715442786" class="btn-secondary" id="directCallBtn">Позвонить: +7 771 544 27 86</a>
                         <a href="https://wa.me/77715442786" target="_blank" rel="noopener noreferrer" class="btn-secondary" id="whatsappBtn">Написать в WhatsApp</a>
                     </div>
                 </div>
@@ -46,28 +48,24 @@
                     <h2>Основные услуги по ремонту котлов</h2>
                     <div class="grid">
                         <div class="card">
+                            <img src="img/photo-1.jpg" alt="Диагностика и ремонт газового котла" class="card-img">
                             <h3>Диагностика и ремонт</h3>
                             <p>Устранение ошибок розжига, утечек газа и теплоносителя, замена датчиков NTC, газовых клапанов, турбин и циркуляционных насосов.</p>
                         </div>
                         <div class="card">
+                            <img src="img/photo-2.jpg" alt="Замена запасных частей газового котла" class="card-img">
                             <h3>Замена запасных частей</h3>
                             <p>Подбор и установка комплектующих в день обращения для котлов Hubert, Teploros, Daewoo, Rinnai, Buran, Chiliboiler и Kiturami.</p>
                         </div>
                         <div class="card">
+                            <img src="img/photo-3.jpg" alt="Химпромывка теплообменника газового котла" class="card-img">
                             <h3>Химпромывка теплообменника</h3>
                             <p>Профессиональная промывка первичных и вторичных теплообменников от накипи для восстановления КПД и снижения расхода газа.</p>
                         </div>
                         <div class="card">
-                            <h3>Ремонт электронных плат</h3>
-                            <p>Компонентное восстановление плат управления после перепадов напряжения без необходимости дорогой полной замены блока.</p>
-                        </div>
-                        <div class="card">
-                            <h3>Чистка и профилактика</h3>
-                            <p>Комплексная подготовка котла к отопительному сезону: чистка камеры сгорания, горелки, электродов и проверка расширительного бака.</p>
-                        </div>
-                        <div class="card">
-                            <h3>Пусконаладка и настройка</h3>
-                            <p>Настройка давления газа по манометру, балансировка контуров отопления и ГВС для стабильной работы без тактования.</p>
+                            <img src="img/photo-4.jpg" alt="Ремонт электронных плат и чистка котла" class="card-img">
+                            <h3>Ремонт плат и чистка</h3>
+                            <p>Восстановление плат управления после перепадов напряжения, чистка горелки, камеры сгорания и подготовка котла к работе.</p>
                         </div>
                     </div>
                 </div>
@@ -144,11 +142,11 @@
                             <input type="text" id="boilerModel" name="boiler" placeholder="Марка котла и проблема (например: Navien, ошибка 03)">
 
                             <label class="checkbox-label">
-                                <input type="checkbox" id="privacyConsent" required checked>
-                                <span>Я согласен(а) на обработку персональных данных в соответствии с <a href="#privacyModal" data-open-modal="privacyModal">Политикой конфиденциальности</a> и <a href="#termsModal" data-open-modal="termsModal">Пользовательским соглашением</a>.</span>
+                                <input type="checkbox" id="privacyConsent" required>
+                                <span>Я согласен(а) на обработку персональных данных и принимаю условия <a href="#privacyModal" data-open-modal="privacyModal">Политики конфиденциальности</a> и <a href="#termsModal" data-open-modal="termsModal">Пользовательского соглашения</a>.</span>
                             </label>
 
-                            <button type="submit" class="btn-primary">Оформить срочный вызов</button>
+                            <button type="submit" class="btn-primary">Оформить вызов</button>
                         </form>
                         <div class="call-summary" id="callSummary"></div>
                     </div>
