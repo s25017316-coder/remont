@@ -3,119 +3,202 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ремонт газовых котлов в Алматы и Алатау (24/7) — remont-kotlov-almaty.kz</title>
+    <title>Ремонт газовых котлов в Алматы и Алатау 24/7 — Выезд за 60 минут | remont-kotlov-almaty.com.kz</title>
+    <meta name="description" content="Срочный ремонт и обслуживание газовых котлов в Алматы и г. Алатау (Жетыген) 24/7. Диагностика, ремонт плат, промывка теплообменников, замена запчастей. Гарантия до 12 месяцев. Звоните: +7 771 544 27 86.">
+    <meta name="keywords" content="ремонт газовых котлов Алматы, ремонт котлов Алатау, мастер по газовым котлам 24/7, промывка теплообменника Алматы, ремонт плат котлов">
+    <link rel="canonical" href="https://www.remont-kotlov-almaty.com.kz/">
+    
+    <!-- Open Graph для соцсетей и мессенджеров -->
+    <meta property="og:title" content="Ремонт газовых котлов в Алматы и Алатау 24/7">
+    <meta property="og:description" content="Выезд мастера за 30–60 минут. Ремонт Hubert, Navien, Kiturami, Rinnai, Daewoo, Buran, Teploros. Гарантия до 12 месяцев.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.remont-kotlov-almaty.com.kz/">
+
+    <!-- Микроразметка Schema.org для поисковиков -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "HomeAndConstructionBusiness",
+      "name": "Сервис ремонта газовых котлов Алматы и Алатау",
+      "url": "https://www.remont-kotlov-almaty.com.kz/",
+      "telephone": "+77715442786",
+      "priceRange": "₸₸",
+      "openingHours": "Mo-Su 00:00-23:59",
+      "areaServed": [
+        { "@type": "City", "name": "Алматы" },
+        { "@type": "City", "name": "Алатау" }
+      ],
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Алматы",
+        "addressCountry": "KZ"
+      }
+    }
+    </script>
+
     <link rel="stylesheet" href="style.css">
+    <style>
+        /* Базовые страхующие стили для новых блоков, если не прописаны в style.css */
+        .price-table { width: 100%; border-collapse: collapse; margin-top: 20px; background: rgba(255,255,255,0.03); border-radius: 12px; overflow: hidden; }
+        .price-table th, .price-table td { padding: 14px 16px; text-align: left; border-bottom: 1px solid rgba(255,255,255,0.1); }
+        .price-table th { background: rgba(0, 191, 255, 0.12); font-weight: 600; }
+        .checkbox-label { display: flex; align-items: flex-start; gap: 10px; font-size: 13px; color: #b0b8c5; margin: 12px 0; cursor: pointer; text-align: left; }
+        .checkbox-label input { width: auto; margin-top: 3px; }
+        .checkbox-label a, .footer-links a { color: #00bfff; text-decoration: underline; cursor: pointer; }
+        .footer-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 24px; padding: 30px 0; border-top: 1px solid rgba(255,255,255,0.1); text-align: left; }
+        .legal-modal { display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.82); z-index: 9999; align-items: center; justify-content: center; padding: 20px; }
+        .legal-modal.active { display: flex; }
+        .legal-modal-box { background: #141824; border: 1px solid rgba(0,191,255,0.3); border-radius: 16px; max-width: 720px; width: 100%; max-height: 85vh; overflow-y: auto; padding: 28px; color: #e2e8f0; position: relative; }
+        .legal-modal-close { position: sticky; top: 0; float: right; background: #1e2536; border: none; color: #fff; font-size: 20px; width: 34px; height: 34px; border-radius: 50%; cursor: pointer; }
+        .legal-modal-box h3 { color: #00bfff; margin-top: 0; }
+        .legal-modal-box h4 { margin: 16px 0 6px; color: #fff; }
+        .legal-modal-box p, .legal-modal-box li { font-size: 14px; line-height: 1.55; color: #cbd5e1; }
+    </style>
 </head>
 <body>
 
-    <div class="welcome-modal" id="welcomeModal">
-        <div class="modal-content">
-            <h1>Добро пожаловать на remont-kotlov-almaty.kz</h1>
-            <p>Ремонт и обслуживание газовых котлов в Алматы и Алатау • Работаем 24/7</p>
-
-            <form id="entryForm" action="#" method="POST">
-                <div class="form-group">
-                    <label for="citySelect">Откуда вы обращаетесь?</label>
-                    <select id="citySelect" name="city" required>
-                        <option value="" disabled selected>Выберите город или район...</option>
-                        <option value="Алматы">Алматы</option>
-                        <option value="Алатау (Жетыген)">Алатау (Жетыген)</option>
-                        <option value="Алатауский район">Алатауский район (Алматы)</option>
-                        <option value="Бостандыкский район">Бостандыкский район</option>
-                        <option value="Медеуский район">Медеуский район</option>
-                        <option value="Алмалинский район">Алмалинский район</option>
-                        <option value="Ауэзовский район">Ауэзовский район</option>
-                        <option value="Наурызбайский район">Наурызбайский район</option>
-                        <option value="Турксибский район">Турксибский район</option>
-                        <option value="Жетысуский район">Жетысуский район</option>
-                        <option value="other_district">Другой район / пригород (указать вручную)</option>
-                    </select>
-                </div>
-
-                <div class="form-group" id="customDistrictGroup" style="display: none;">
-                    <label for="customDistrict">Введите, из какого вы района или поселка:</label>
-                    <input type="text" id="customDistrict" name="custom_district" placeholder="Например: Каскелен, Талгар, Отеген-Батыр...">
-                </div>
-
-                <div class="form-group">
-                    <label for="source">Откуда вы узнали о нашем сайте?</label>
-                    <select id="source" name="source" required>
-                        <option value="" disabled selected>Выберите вариант...</option>
-                        <option value="TikTok">TikTok</option>
-                        <option value="Telegram">Telegram</option>
-                        <option value="YouTube">YouTube</option>
-                        <option value="Через знакомых">Через знакомых</option>
-                    </select>
-                </div>
-
-                <button type="submit">Перейти на сайт</button>
-            </form>
-        </div>
-    </div>
-
-    <div class="site-wrapper" id="siteWrapper" style="display: none;">
+    <!-- Весь основной контент сразу виден поисковым роботам и посетителям -->
+    <div class="site-wrapper" id="siteWrapper">
         <header class="navbar">
             <div class="container nav-inner">
-                <div class="logo">remont-kotlov-almaty.kz</div>
-                <div class="user-location" id="displayLocation">Алматы и Алатау • 24/7</div>
+                <a href="#" class="logo" style="text-decoration:none; color:inherit;">remont-kotlov-almaty.com.kz</a>
+                <div class="user-location" id="displayLocation" onclick="openRegionModal()" style="cursor:pointer;" title="Нажмите, чтобы выбрать ваш район">
+                    📍 Алматы и Алатау • 24/7
+                </div>
                 <a href="tel:+77715442786" class="nav-call-btn">+7 771 544 27 86</a>
             </div>
         </header>
 
         <main class="main-content">
+            <!-- Первый экран -->
             <section class="hero">
                 <div class="container">
-                    <span class="badge">Работаем 24/7 • Выезд в течение 60 минут</span>
-                    <h1>Срочный ремонт газовых котлов в Алматы и Алатау</h1>
-                    <p>Диагностика, чистка теплообменников, ремонт плат, насосов и замена запасных частей. Ремонтируем Hubert, Teploros, Daewoo, Rinnai, Buran, Navien, Kiturami и другие марки с гарантией до 12 месяцев.</p>
+                    <span class="badge">Работаем 24/7 без выходных • Выезд за 30–60 минут</span>
+                    <h1>Срочный ремонт и сервис газовых котлов в Алматы и Алатау</h1>
+                    <p>Оперативная диагностика, промывка теплообменников, ремонт электронных плат, насосов и замена оригинальных запчастей на дому. Обслуживаем <strong>Hubert, Teploros, Daewoo, Rinnai, Buran, Navien, Kiturami, Baxi, Bosch, Ariston</strong> и другие марки с официальной гарантией до 12 месяцев.</p>
                     <div class="hero-actions">
                         <a href="tel:+77715442786" class="btn-primary" id="directCallBtn">Позвонить: +7 771 544 27 86</a>
-                        <a href="https://wa.me/77715442786" target="_blank" rel="noopener noreferrer" class="btn-secondary" id="whatsappBtn">Написать в WhatsApp</a>
+                        <a href="https://wa.me/77715442786?text=Здравствуйте!%20Нужен%20ремонт%20газового%20котла." target="_blank" rel="noopener noreferrer" class="btn-secondary" id="whatsappBtn">Написать в WhatsApp</a>
                     </div>
                 </div>
             </section>
 
-            <section class="services">
+            <!-- Услуги -->
+            <section class="services" id="services">
                 <div class="container">
-                    <h2>Основные услуги</h2>
+                    <h2>Основные услуги по ремонту котлов</h2>
                     <div class="grid">
                         <div class="card">
                             <h3>Диагностика и ремонт</h3>
-                            <p>Устранение ошибок розжига, утечек газа и воды, замена датчиков, клапанов и циркуляционных насосов.</p>
+                            <p>Устранение ошибок розжига, утечек газа и теплоносителя, замена датчиков NTC, газовых клапанов, турбин и циркуляционных насосов.</p>
                         </div>
                         <div class="card">
                             <h3>Замена запасных частей</h3>
-                            <p>Подбор и замена комплектующих для котлов Hubert, Teploros, Daewoo, Rinnai, Buran, Chiliboiler и Kiturami.</p>
+                            <p>Подбор и установка комплектующих в день обращения для котлов Hubert, Teploros, Daewoo, Rinnai, Buran, Chiliboiler и Kiturami.</p>
                         </div>
                         <div class="card">
                             <h3>Промывка теплообменника</h3>
-                            <p>Химическая и гидродинамическая очистка от накипи для восстановления КПД и снижения расхода газа.</p>
+                            <p>Химическая и гидродинамическая очистка первичных и вторичных теплообменников от накипи для восстановления КПД и экономии газа.</p>
                         </div>
                         <div class="card">
                             <h3>Ремонт электронных плат</h3>
-                            <p>Восстановление плат управления после скачков напряжения без необходимости дорогой полной замены.</p>
+                            <p>Компонентное восстановление плат управления после перепадов напряжения без необходимости дорогой полной замены блока.</p>
                         </div>
                         <div class="card">
                             <h3>Техническое обслуживание</h3>
-                            <p>Комплексная подготовка газового котла к отопительному сезону, настройка давления и чистка горелки.</p>
+                            <p>Комплексная подготовка котла к отопительному сезону: чистка камеры сгорания, горелки, электродов, проверка расширительного бака.</p>
+                        </div>
+                        <div class="card">
+                            <h3>Пусконаладка и настройка</h3>
+                            <p>Настройка давления газа по манометру, балансировка контуров отопления и ГВС для стабильной работы без тактования.</p>
                         </div>
                     </div>
                 </div>
             </section>
 
-            <section class="request-section">
+            <!-- Прозрачный прайс-лист (важно для доверия и SEO) -->
+            <section class="pricing" id="pricing" style="padding: 40px 0;">
+                <div class="container">
+                    <h2>Ориентировочный прайс-лист</h2>
+                    <p>Точная стоимость согласовывается с вами до начала работ после проведения диагностики.</p>
+                    <table class="price-table">
+                        <thead>
+                            <tr>
+                                <th>Наименование услуги</th>
+                                <th>Стоимость</th>
+                                <th>Гарантия</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Выезд мастера и комплексная диагностика (при ремонте — бесплатно)</td>
+                                <td>от 5 000 ₸</td>
+                                <td>—</td>
+                            </tr>
+                            <tr>
+                                <td>Ежегодное техническое обслуживание и чистка горелки</td>
+                                <td>от 8 000 ₸</td>
+                                <td>до 6 мес.</td>
+                            </tr>
+                            <tr>
+                                <td>Замена датчиков, прессостата, электродов розжига</td>
+                                <td>от 6 000 ₸</td>
+                                <td>до 12 мес.</td>
+                            </tr>
+                            <tr>
+                                <td>Ремонт / замена циркуляционного насоса или трёхходового клапана</td>
+                                <td>от 8 000 ₸</td>
+                                <td>до 12 мес.</td>
+                            </tr>
+                            <tr>
+                                <td>Промывка теплообменника (первичного / вторичного)</td>
+                                <td>от 12 000 ₸</td>
+                                <td>до 12 мес.</td>
+                            </tr>
+                            <tr>
+                                <td>Ремонт электронной платы управления</td>
+                                <td>от 12 000 ₸</td>
+                                <td>до 12 мес.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+            <!-- Форма вызова мастера с обязательным согласием -->
+            <section class="request-section" id="request">
                 <div class="container">
                     <div class="request-box">
                         <div class="request-header">
-                            <h2>Персональный вызов мастера</h2>
+                            <h2>Вызов мастера на дом</h2>
                             <span class="schedule-tag">24/7 без выходных</span>
                         </div>
-                        <p>Заполните форму — сформируем персональную заявку на номер +7 771 544 27 86</p>
+                        <p>Оставьте заявку — мастер перезвонит в течение 5 минут или примет заказ в WhatsApp по номеру <strong>+7 771 544 27 86</strong></p>
+                        
                         <form id="callbackForm" class="callback-form">
-                            <input type="text" id="clientName" placeholder="Ваше имя" required>
-                            <input type="tel" id="clientPhone" placeholder="Ваш телефон (+7...)" required>
-                            <input type="text" id="boilerModel" placeholder="Марка котла (например: Buran, Kiturami)">
-                            <button type="submit" class="btn-primary">Оформить вызов</button>
+                            <input type="text" id="clientName" name="name" placeholder="Ваше имя" required>
+                            <input type="tel" id="clientPhone" name="phone" placeholder="Ваш телефон (+7 7XX XXX XX XX)" required>
+                            <select id="citySelect" name="city" required>
+                                <option value="Алматы" selected>Город: Алматы</option>
+                                <option value="Алатау (Жетыген)">Город: Алатау (Жетыген)</option>
+                                <option value="Алатауский район">Алматы — Алатауский район</option>
+                                <option value="Бостандыкский район">Алматы — Бостандыкский район</option>
+                                <option value="Медеуский район">Алматы — Медеуский район</option>
+                                <option value="Алмалинский район">Алматы — Алмалинский район</option>
+                                <option value="Ауэзовский район">Алматы — Ауэзовский район</option>
+                                <option value="Наурызбайский район">Алматы — Наурызбайский район</option>
+                                <option value="Турксибский район">Алматы — Турксибский район</option>
+                                <option value="Жетысуский район">Алматы — Жетысуский район</option>
+                                <option value="Пригород Алматы">Пригород (Талгар, Каскелен, Отеген-Батыр и др.)</option>
+                            </select>
+                            <input type="text" id="boilerModel" name="boiler" placeholder="Марка котла и проблема (например: Navien, ошибка 03)">
+                            
+                            <label class="checkbox-label">
+                                <input type="checkbox" id="privacyConsent" required checked>
+                                <span>Я согласен(а) на обработку персональных данных в соответствии с <a onclick="openLegalModal('privacyModal')">Политикой конфиденциальности</a> и <a onclick="openLegalModal('termsModal')">Пользовательским соглашением</a>.</span>
+                            </label>
+
+                            <button type="submit" class="btn-primary">Оформить срочный вызов</button>
                         </form>
                         <div class="call-summary" id="callSummary" style="display: none;"></div>
                     </div>
@@ -123,13 +206,89 @@
             </section>
         </main>
 
+        <!-- Юридически полный футер -->
         <footer class="footer">
             <div class="container">
-                <p>remont-kotlov-almaty.kz — Режим работы: 24/7 — Телефон: +7 771 544 27 86 — Алматы и Алатау</p>
+                <div class="footer-grid">
+                    <div>
+                        <h4>Сервис ремонта котлов</h4>
+                        <p>Профессиональный ремонт и обслуживание газового отопительного оборудования в г. Алматы, г. Алатау и Алматинской области.</p>
+                        <p><strong>Режим работы:</strong> Круглосуточно, 24/7 без выходных</p>
+                    </div>
+                    <div>
+                        <h4>Контакты и адрес</h4>
+                        <p><strong>Телефон / WhatsApp:</strong> <a href="tel:+77715442786" style="color:inherit;">+7 771 544 27 86</a></p>
+                        <p><strong>Зона выезда:</strong> г. Алматы (все районы), г. Алатау, пригород до 40 км</p>
+                        <p><strong>Сайт:</strong> www.remont-kotlov-almaty.com.kz</p>
+                    </div>
+                    <div class="footer-links">
+                        <h4>Документы и информация</h4>
+                        <p><a onclick="openLegalModal('privacyModal')">Политика конфиденциальности</a></p>
+                        <p><a onclick="openLegalModal('termsModal')">Пользовательское соглашение</a></p>
+                        <p><a onclick="openLegalModal('warrantyModal')">Условия гарантии</a></p>
+                    </div>
+                </div>
+                <div style="text-align:center; padding-top: 16px; font-size: 13px; opacity: 0.75;">
+                    © 2026 remont-kotlov-almaty.com.kz. Все права защищены. Информация на сайте носит ознакомительный характер и не является публичной офертой.
+                </div>
             </div>
         </footer>
     </div>
 
+    <!-- Модальное окно: Политика конфиденциальности (РК) -->
+    <div class="legal-modal" id="privacyModal" onclick="if(event.target===this) closeLegalModal('privacyModal')">
+        <div class="legal-modal-box">
+            <button class="legal-modal-close" onclick="closeLegalModal('privacyModal')">&times;</button>
+            <h3>Политика конфиденциальности и обработки персональных данных</h3>
+            <p>Настоящая Политика разработана в соответствии с Законом Республики Казахстан от 21 мая 2013 года № 94-V «О персональных данных и их защите» и определяет порядок обработки и защиты информации о пользователях сайта <strong>www.remont-kotlov-almaty.com.kz</strong>.</p>
+            <h4>1. Какие данные мы собираем</h4>
+            <ul>
+                <li>Имя пользователя, контактный номер телефона;</li>
+                <li>Район/город обращения и сведения о модели отопительного оборудования;</li>
+                <li>Технические данные (IP-адрес, тип браузера, файлы cookie) для корректной работы сайта и аналитики.</li>
+            </ul>
+            <h4>2. Цели сбора и обработки</h4>
+            <p>Персональные данные используются исключительно для обратной связи с клиентом, согласования времени выезда мастера, расчёта стоимости услуг и выполнения гарантийных обязательств. Мы не передаём и не продаём ваши данные третьим лицам, за исключением случаев, предусмотренных законодательством Республики Казахстан.</p>
+            <h4>3. Защита и хранение данных</h4>
+            <p>Администрация сайта принимает необходимые организационные и технические меры для защиты персональных данных от неправомерного доступа. Данные хранятся в течение срока, необходимого для выполнения заявки и гарантийного обслуживания.</p>
+            <h4>4. Права пользователя</h4>
+            <p>Вы вправе в любой момент запросить уточнение, блокирование или удаление ваших персональных данных, обратившись по телефону или в WhatsApp: <strong>+7 771 544 27 86</strong>.</p>
+        </div>
+    </div>
+
+    <!-- Модальное окно: Пользовательское соглашение -->
+    <div class="legal-modal" id="termsModal" onclick="if(event.target===this) closeLegalModal('termsModal')">
+        <div class="legal-modal-box">
+            <button class="legal-modal-close" onclick="closeLegalModal('termsModal')">&times;</button>
+            <h3>Пользовательское соглашение</h3>
+            <p>Используя сайт <strong>www.remont-kotlov-almaty.com.kz</strong> и отправляя заявки через формы обратной связи, вы подтверждаете своё согласие с условиями настоящего Соглашения.</p>
+            <h4>1. Общие положения</h4>
+            <p>Сайт предоставляет информационные материалы об услугах по ремонту и техническому обслуживанию газовых котлов в г. Алматы и г. Алатау, а также техническую возможность оставить заявку на выезд специалиста.</p>
+            <h4>2. Стоимость и порядок оказания услуг</h4>
+            <p>Цены, указанные на сайте, являются ориентировочными. Итоговая стоимость работ и запасных частей определяется мастером после проведения диагностики оборудования и согласовывается с заказчиком до начала ремонта.</p>
+            <h4>3. Ответственность сторон</h4>
+            <p>Пользователь обязуется указывать достоверные контактные данные при оформлении заявки. Администрация сайта не несёт ответственности за перебои в работе сети Интернет или мессенджеров третьих лиц.</p>
+        </div>
+    </div>
+
+    <!-- Модальное окно: Условия гарантии -->
+    <div class="legal-modal" id="warrantyModal" onclick="if(event.target===this) closeLegalModal('warrantyModal')">
+        <div class="legal-modal-box">
+            <button class="legal-modal-close" onclick="closeLegalModal('warrantyModal')">&times;</button>
+            <h3>Гарантийные обязательства</h3>
+            <p>На все выполненные ремонтные работы и установленные оригинальные запасные части предоставляется гарантия сроком <strong>от 3 до 12 месяцев</strong> в зависимости от типа узла и условий эксплуатации.</p>
+            <p>Гарантия не распространяется на неисправности, вызванные скачками напряжения в электросети при отсутствии стабилизатора, нарушением правил эксплуатации газового оборудования или самостоятельным вмешательством в конструкцию котла.</p>
+        </div>
+    </div>
+
+    <script>
+        function openLegalModal(id) {
+            document.getElementById(id).classList.add('active');
+        }
+        function closeLegalModal(id) {
+            document.getElementById(id).classList.remove('active');
+        }
+    </script>
     <script src="script.js"></script>
 </body>
 </html>
