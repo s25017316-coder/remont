@@ -1,1 +1,24 @@
-
+{
+  "@context": "https://schema.org",
+  "@type": "HomeAndConstructionBusiness",
+  "name": "Сервис ремонта газовых котлов Алматы и Алатау",
+  "url": "https://www.remont-kotlov-almaty.com.kz/",
+  "telephone": "+77715442786",
+  "priceRange": "от 15 000 ₸",
+  "openingHours": "Mo-Su 00:00-23:59",
+  "areaServed": [
+    {
+      "@type": "City",
+      "name": "Алматы"
+    },
+    {
+      "@type": "City",
+      "name": "Алатау"
+    }
+  ],
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Алматы",
+    "addressCountry": "KZ"
+  }
+}
