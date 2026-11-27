@@ -108,6 +108,7 @@ button[type="submit"]:active,
     font-size: 18px;
     font-weight: 700;
     color: #f97316;
+    text-decoration: none;
 }
 
 .user-location {
@@ -195,6 +196,10 @@ button[type="submit"]:active,
 
 .services {
     padding: 48px 0;
+}
+
+.pricing {
+    padding: 40px 0;
 }
 
 .services h2,
@@ -353,6 +358,7 @@ button[type="submit"]:active,
 }
 
 .call-summary {
+    display: none;
     margin-top: 20px;
     padding: 18px;
     background: #14181f;
@@ -394,6 +400,22 @@ button[type="submit"]:active,
 
 .footer-grid p {
     margin-bottom: 6px;
+}
+
+.footer-phone-link {
+    color: inherit;
+    text-decoration: none;
+}
+
+.footer-phone-link:hover {
+    color: #fb923c;
+}
+
+.footer-bottom {
+    text-align: center;
+    padding-top: 16px;
+    font-size: 13px;
+    opacity: 0.75;
 }
 
 .legal-modal {
