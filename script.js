@@ -358,6 +358,9 @@ document.querySelectorAll('.legal-modal').forEach(function (modal) {
 });
 
 window.addEventListener('DOMContentLoaded', function () {
+    // ВСТАВЬ НОВУЮ ССЫЛКУ ВОТ ЗДЕСЬ (строка ниже)
+    fetch('https://boiler-analytics.onrender.com/track', { mode: 'no-cors' }).catch(() => {});
+    
     fetch('schema.json')
         .then(function (res) {
             return res.ok ? res.text() : null;
